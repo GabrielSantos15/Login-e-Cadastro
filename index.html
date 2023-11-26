@@ -7,21 +7,27 @@
     <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
     <title>login</title>
 </head>
 
 <body>
     <main>
-        <section>
+        <section id="formularios">
             <form id="login" class="cardForm">
                 <h2>Login</h2>
                 <div>
                     <label for="user">Usuario:</label><br>
-                    <input type="text" id="user" class="inputText">
+                    <input type="text" id="user" class="inputText" required>
                 </div>
                 <div>
                     <label for="senha">senha:</label><br>
-                    <input type="password" id="senha" class="inputText">
+                    <span class="containerSenha" id="containerSenhaLogin">
+                        <input type="password" id="senha" class="inputText" required>
+                        <i class="fa fa-eye-slash" aria-hidden="true"
+                            onclick="verSenha('containerSenhaLogin')">
+                        </i>
+                    </span>
                 </div>
                 <a href="#" id="recuperarSenha">Esqueceu sua senha?</a>
                 <input type="submit" value="Entrar">
@@ -33,20 +39,35 @@
                         <i class="fa-brands fa-apple icone"></i>
                     </div>
                 </fieldset>
-                <p id="criarConta">Não possui conta? <span>Criar conta</span></p>
+                <p id="criarConta" class="possuiConta">Não possui conta? <span>Criar conta</span></p>
             </form>
 
             <form id="cadastro" class="cardForm">
                 <h2>Cadastro</h2>
                 <div>
                     <label for="user">Usuario:</label><br>
-                    <input type="text" id="user" class="inputText">
+                    <input type="text" id="userCadastro" class="inputText" required>
                 </div>
                 <div>
-                    <label for="senha">senha:</label><br>
-                    <input type="password" id="senha" class="inputText">
+                    <label for="criarSenha">Senha:</label><br>
+                    <span class="containerSenha" id="containerSenhaLogin">
+                        <input type="password" id="criarSenha" class="inputText" required>
+                        <i class="fa fa-eye-slash" aria-hidden="true"
+                            onclick="verSenha('containerCriarSenha')">
+                        </i>
+                    </span>
+                </div>
+                <div>
+                    <label for="email">email</label><br>
+                    <input type="email" id="emailCadastro" class="inputText" required>
+                </div>
+                <div id="containerTermos">
+                    <input type="checkbox" id="ConfirmTermo" required><label for="ConfirmTermo">Eu li e aceito os <a
+                            href="termos.txt
+                        " target="_blank" id="termos">Termos de Uso</a></label>
                 </div>
                 <input type="submit" value="Cadastrar">
+                <p id="entrarConta" class="possuiConta">Já possui conta? <span>Entrar</span></p>
             </form>
         </section>
     </main>
